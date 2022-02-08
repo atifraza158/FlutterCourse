@@ -9,26 +9,23 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Colors.indigo,
+        // padding: EdgeInsets.zero,
+        color: Colors.black,
         child: ListView(
-          padding: EdgeInsets.zero,
+          // padding: EdgeInsets.zero,
           children: [
-            DrawerHeader(
-                padding: EdgeInsets.zero,
-                child: UserAccountsDrawerHeader(
-                  decoration: BoxDecoration(
-                    color: Colors.indigoAccent,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  margin: EdgeInsets.zero,
-                  accountName: Text("Atif RaZa"),
-                  accountEmail: Text('atifraza.brw@gmail.com'),
-                  currentAccountPicture: CircleAvatar(
-                    backgroundImage: AssetImage(
-                      "assets/images/image.jpg",
-                    ),
-                  ),
-                )),
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.grey[900],
+              ),
+              accountName: Text("Atif RaZa"),
+              accountEmail: Text(
+                "atifraza.brw@gmail.com",
+              ),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage("assets/images/image.jpg"),
+              ),
+            ),
             ListTile(
               leading: Icon(
                 CupertinoIcons.home,
@@ -67,7 +64,7 @@ class MyDrawer extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-            ),
+            )
           ],
         ),
       ),
