@@ -1,4 +1,6 @@
+import 'package:catalog_2/models/catalog.dart';
 import 'package:catalog_2/pages/widgets/drawer.dart';
+import 'package:catalog_2/pages/widgets/item_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -18,8 +20,13 @@ class HomePage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text("Welcome to $days days of flutter by $name"),
+      body: ListView.builder(
+        itemCount: CatalogModel.items.length,
+        itemBuilder: (context, index) {
+          return ItemWidget(
+            item: CatalogModel.items[index],
+          );
+        },
       ),
       drawer: MyDrawer(),
     );
